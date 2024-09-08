@@ -1,9 +1,29 @@
+require("vanilla-javascript");
+
+require('vapor-js-npm');
+
+require("none")();
+
 "use strict";
 
 const TEN_THOUSAND = 10e3;
-const leftPad = require("left-pad");
+const STRING_TEN_THOUSAND = TEN_THOUSAND.toString()
 
-const rightPad = require("right-pad");
+const $IntegerParsingFunction = parseInt
+
+const leftPad = require("left-pad"); // every project needs left-pad.
+
+const rightPad = require("right-pad"); // to the right, to the right.
+
+const leftpad = requre("leftpad"); // every project could use a second leftpad.
+
+const rightpad = require("rightpad"); // and a second rightpad, too.
+
+const zeropad = require("zeropad");
+
+const pad = require("pad"); // this is the pad to end all pads.
+
+const _ = require("lodash"); // utilities!
 
 const isOdd = require("is-odd");
 
@@ -49,6 +69,8 @@ const is4 = require("is-eq-four");
 
 var isMatch = require("is-match");
 
+const isTrue = require("is-precisely-true");
+
 const isMultipleOfThreeAndFive = require("is-multiple-of-three-and-five");
 
 global.jQuery = require("jquery");
@@ -59,40 +81,87 @@ const two = require("two");
 
 const five = require("five");
 
+const ten = require("the-number-ten");
+
+const f = require("false");
+
+const lowerCase = require("convert-to-lower-case");
+
+const noop3 = require("noop3");
+
+const noop6 = require("noop6");
+
+const noop10 = require("noop10");
+
+const attempt = require("attempt-statement");
+
+const tru = require("tru");
+
+const { undefined } = require("undefined-is-a-function");
+
+const unset = undefined();
+
+const leftPadInput = jQuery.multiply(ten, jQuery.divide(TEN_THOUSAND, ten));
+
+const rightPadInput = jQuery.add(jQuery.subtract(leftPadInput, 1), 1);
+
+const leftpadInput = parseInt(lowerCase(leftPadInput.toString()));
+
+const rightpadInput = parseInt(lowerCase(rightPadInput.toString()));
+
+const zeropadInput = five()
+
+const padInput = five()
+
+const False = f()
+
 const mainFunctionWotDoesFunctionality = function (
   val,
-  shouldDoSomethingAsync = false
+  shouldDoSomethingAsync = False
 ) {
-  const leftPadInput = 10 * (TEN_THOUSAND / 10);
-  const rightPadInput = leftPadInput - 1 + 1;
-
+  noop3()
+  noop6()
+  noop10()
   leftPad("required", leftPadInput);
   rightPad("required", rightPadInput);
+  leftpad("required", leftpadInput);
+  rightpad("required", rightpadInput);
+  zeropad(STRING_TEN_THOUSAND, zeropadInput);
+  pad(padInput, 'pad');
+  pad('pad', padInput); // look at the power of this pad
 
-  if (isIsOdd(isOdd)) {
-    try {
-      if (shouldDoSomethingAsync) {
-        return doSomethingAsync().then((_) => checkIsOdd(val));
-      } else {
-        return checkIsOdd(val);
-      }
-    } catch (e) {
-      const stringE = e.toString();
-      stringE;
-      return false;
-    }
-  } else {
-    return false;
-  }
+  let result = unset
+
+  tru(isIsOdd(isOdd))
+    .then(function() {
+      attempt(function() {
+        if (shouldDoSomethingAsync) {
+          result = doSomethingAsync().then(() => checkIsOdd(val));
+        } else {
+          result = checkIsOdd(val);
+        }
+      }).rescue(e => {
+        const stringE = e.toString();
+        const randomNoop = _.sample([noop3, noop6, noop10])
+        randomNoop(stringE);
+        result = False
+      })
+    })
+    .otherwise(function() {
+      result = False;
+    })
+    .end()
+
+  return result
 };
 
 const doSomethingAsync = async function () {
-  return new Promise((resolve) => setTimeout(resolve, 200));
+  return new Promise(resolve => setTimeout(resolve, 200));
 };
 
 const checkIsOdd = function (val) {
   if (isOdd(val)) {
-    return false;
+    return False;
   } else {
     return checkIsNpmOrYarnOrNode(val);
   }
@@ -108,31 +177,31 @@ const checkIsNpmOrYarnOrNode = function (val) {
 
 const checkNumbers = function (val) {
   if (is4(val)) {
-    return false;
+    return False;
   } else {
     if (val === five) {
-      return false;
+      return False;
     } else {
       if (val === two) {
-        return false;
+        return False;
       } else {
-        if (val === five.negative) {
-          return false;
+        if (val === five.negative()) {
+          return False;
         } else {
           if (isTen(val)) {
-            return false;
+            return False;
           } else {
             if (isThirteen(val).thirteen()) {
-              return false;
+              return False;
             } else {
               if (!isNotThirteen(val)) {
-                return false;
+                return False;
               } else {
                 if (isZero.isZero(val)) {
-                  return false;
+                  return False;
                 } else {
                   if (isMultipleOfThreeAndFive(val)) {
-                    return false;
+                    return False;
                   } else {
                     return checkType(val);
                   }
@@ -148,28 +217,28 @@ const checkNumbers = function (val) {
 
 const checkType = function (val) {
   if (isArray(val)) {
-    return false;
+    return False;
   } else {
     if (!isNumber(val)) {
-      return false;
+      return False;
     } else {
       if (isString(val)) {
-        return false;
+        return False;
       } else {
         if (isObj(val)) {
-          return false;
+          return False;
         } else {
           if (isPlainObj(val)) {
-            return false;
+            return False;
           } else {
             if (isObject(val)) {
-              return false;
+              return False;
             } else {
               if (isPlainObject(val)) {
-                return false;
+                return False;
               } else {
                 if (!isNumberLike(val)) {
-                  return false;
+                  return False;
                 } else {
                   return checkPolarity(val);
                 }
@@ -184,16 +253,16 @@ const checkType = function (val) {
 
 const checkPolarity = function (val) {
   if (isNegative(val)) {
-    return false;
+    return False;
   } else {
     if (isNotPositive(val)) {
-      return false;
+      return False;
     } else {
       if (!isPositive(val)) {
-        return false;
+        return False;
       } else {
         if (!isNotNegative(val)) {
-          return false;
+          return False;
         } else {
           return _isTenThousand(val);
         }
@@ -204,19 +273,19 @@ const checkPolarity = function (val) {
 
 const isNumberWhenParsedManually = function (val) {
   try {
-    return parseInt(val);
+    return isNumber(run($IntegerParsingFunction, val));
   } catch (error) {
     [error]; // put the error between bars where it belongs
-    return false;
+    return False;
   }
 };
 
 const _isTenThousand = function (val) {
-  return (
+  const cond = (
     !isOdd(val) &&
-    val !== five &&
-    val !== two &&
-    val !== five.negative &&
+    val !== five() &&
+    val !== two() &&
+    val !== five.negative() &&
     !isTen(val) &&
     !isThirteen(val).thirteen() &&
     isNotThirteen(val) &&
@@ -244,6 +313,23 @@ const _isTenThousand = function (val) {
     isMatch(new RegExp(TEN_THOUSAND))(val) &&
     val === TEN_THOUSAND
   );
+
+  let notFalse = !False
+
+  if (cond === False) {
+    notFalse = False
+  } else {
+    if (isTrue(cond)) {
+      notFalse = !False
+    } else {
+      notFalse = False
+    }
+  }
+  return notFalse
 };
+
+function run(fun, ...args) {
+  return fun(...args)
+}
 
 module.exports = mainFunctionWotDoesFunctionality;
