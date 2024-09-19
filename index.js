@@ -1,335 +1,250 @@
-require("vanilla-javascript");
+require('vanilla-javascript')
+require('none')()
 
-require('vapor-js-npm');
+var TEN_THOUSAND = 10e3
 
-require("none")();
+var noop = require('noop6')
 
-"use strict";
+var isNull = require('is-null')
 
-const TEN_THOUSAND = 10e3;
-const STRING_TEN_THOUSAND = TEN_THOUSAND.toString()
+var isNil = require('is-nil')
 
-const $IntegerParsingFunction = parseInt
+var isUndefined = require('is-undefined')
 
-const leftPad = require("left-pad"); // every project needs left-pad.
+var isUnnull = require('is-unnull')
 
-const rightPad = require("right-pad"); // to the right, to the right.
+var isNullish = require('is-nullish')
 
-const leftpad = requre("leftpad"); // every project could use a second leftpad.
+var isNullOrEmpty = require('is-null-or-empty')
 
-const rightpad = require("rightpad"); // and a second rightpad, too.
+var isNonNullObject = require('is-non-null-object')
 
-const zeropad = require("zeropad");
+var isArray = require('isarray')
 
-const pad = require("pad"); // this is the pad to end all pads.
+var isFunction = require('is-function')
 
-const _ = require("lodash"); // utilities!
+var isString = require('is-string')
 
-const isOdd = require("is-odd");
+var isBoolean = require('is-boolean')
 
-const isIsOdd = require("is-is-odd");
+var isRealBoolean = require('is-real-boolean')
 
-const isNode = require("is-node");
+var isBooleanObject = require('is-boolean-object')
 
-const { isNpm, isYarn, isNpmOrYarn } = require("is-npm");
+var isObject = require('is-object')
 
-const isArray = require("is-array");
+var isPlainObject = require('is-plain-object').isPlainObject
 
-const isNumber = require("is-number");
+var isNumber = require('is-number')
 
-const isString = require("is-string");
+var isActualNumber = require('is-actual-number')
 
-const isNegative = require("is-negative");
+var isOdd = require('is-odd')
 
-const isPositive = require("is-positive");
+var isEven = require('is-even')
 
-const isNotNegative = require("is-not-negative");
+var isUnodd = require('is-unodd')
 
-const isNotPositive = require("is-not-positive");
+var isUneven = require('is-uneven')
 
-const isObj = require("is-obj");
+var fizzbuzz = require('fizzbuzz-npm-edition')
 
-const isPlainObj = require("is-plain-obj");
+var fizz = require('string-fizz')
 
-const isObject = require("is-object");
+var buzz = require('string-buzz')
 
-const { isPlainObject } = require("is-plain-object");
+var isMultipleOf3 = require('is-multiple-of-3')
 
-const isNumberLike = require("is-number-like");
+var isMultipleOf5 = require('is-multiple-of-5')
 
-const isTen = require("is-ten");
+var isMultipleOf3and5 = require('is-multiple-of-three-and-five')
 
-const isThirteen = require("is-thirteen");
+var isNegative = require('is-negative')
 
-const isNotThirteen = require("is-not-thirteen");
+var isPositive = require('is-positive')
 
-const isZero = require("is-zero");
+var isNotNegative = require('is-not-negative')
 
-const is4 = require("is-eq-four");
+var isNotPositive = require('is-not-positive')
 
-var isMatch = require("is-match");
+var isOne = require('is-one')
 
-const isTrue = require("is-precisely-true");
+var isTen = require('is-ten')
 
-const isMultipleOfThreeAndFive = require("is-multiple-of-three-and-five");
+var isHundred = require('is-hundred')
 
-global.jQuery = require("jquery");
+var isThousand = require('is-thousand').default
 
-require("jquery-basic-arithmetic-plugin");
+var isTenThousand = require('is-ten-thousand')
 
-const two = require("two");
+var isTwo = require('is-two').isTwo
 
-const five = require("five");
+var isThree = require('is-three')
 
-const ten = require("the-number-ten");
+var isFour = require('is-eq-four')
 
-const f = require("false");
+var isAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything = require('is-answer-to-the-ultimate-question-of-life-the-universe-and-everything')
 
-const lowerCase = require("convert-to-lower-case");
+var is104 = require('is-104')
 
-const noop3 = require("noop3");
+var isTheNumberOneHundredAndSixtyEight = require('is-one-hundred-and-sixty-eight')
 
-const noop6 = require("noop6");
+var two = require('two')
 
-const noop10 = require("noop10");
+var five = require('five')
 
-const attempt = require("attempt-statement");
+var thirteen = require('always-thirteen')
 
-const tru = require("tru");
+var fourteen = require('fourteen')
 
-const { undefined } = require("undefined-is-a-function");
+var fifteen = require('number-fifteen')
 
-const unset = undefined();
-
-const leftPadInput = jQuery.multiply(ten, jQuery.divide(TEN_THOUSAND, ten));
-
-const rightPadInput = jQuery.add(jQuery.subtract(leftPadInput, 1), 1);
-
-const leftpadInput = parseInt(lowerCase(leftPadInput.toString()));
-
-const rightpadInput = parseInt(lowerCase(rightPadInput.toString()));
-
-const zeropadInput = five()
-
-const padInput = five()
-
-const False = f()
-
-const mainFunctionWotDoesFunctionality = function (
-  val,
-  shouldDoSomethingAsync = False
-) {
-  noop3()
-  noop6()
-  noop10()
-  leftPad("required", leftPadInput);
-  rightPad("required", rightPadInput);
-  leftpad("required", leftpadInput);
-  rightpad("required", rightpadInput);
-  zeropad(STRING_TEN_THOUSAND, zeropadInput);
-  pad(padInput, 'pad');
-  pad('pad', padInput); // look at the power of this pad
-
-  let result = unset
-
-  tru(isIsOdd(isOdd))
-    .then(function() {
-      attempt(function() {
-        if (shouldDoSomethingAsync) {
-          result = doSomethingAsync().then(() => checkIsOdd(val));
-        } else {
-          result = checkIsOdd(val);
-        }
-      }).rescue(e => {
-        const stringE = e.toString();
-        const randomNoop = _.sample([noop3, noop6, noop10])
-        randomNoop(stringE);
-        result = False
-      })
-    })
-    .otherwise(function() {
-      result = False;
-    })
-    .end()
-
-  return result
-};
-
-const doSomethingAsync = async function () {
-  return new Promise(resolve => setTimeout(resolve, 200));
-};
-
-const checkIsOdd = function (val) {
-  if (isOdd(val)) {
-    return False;
-  } else {
-    return checkIsNpmOrYarnOrNode(val);
-  }
-};
-
-const checkIsNpmOrYarnOrNode = function (val) {
-  if (((isNpm || isYarn) && isNpmOrYarn) || isNode) {
-    return checkNumbers(val);
-  } else {
-    throw new Error("I'm not sure how this happened");
-  }
-};
-
-const checkNumbers = function (val) {
-  if (is4(val)) {
-    return False;
-  } else {
-    if (val === five) {
-      return False;
-    } else {
-      if (val === two) {
-        return False;
-      } else {
-        if (val === five.negative()) {
-          return False;
-        } else {
-          if (isTen(val)) {
-            return False;
-          } else {
-            if (isThirteen(val).thirteen()) {
-              return False;
-            } else {
-              if (!isNotThirteen(val)) {
-                return False;
-              } else {
-                if (isZero.isZero(val)) {
-                  return False;
-                } else {
-                  if (isMultipleOfThreeAndFive(val)) {
-                    return False;
-                  } else {
-                    return checkType(val);
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-const checkType = function (val) {
-  if (isArray(val)) {
-    return False;
-  } else {
-    if (!isNumber(val)) {
-      return False;
-    } else {
-      if (isString(val)) {
-        return False;
-      } else {
-        if (isObj(val)) {
-          return False;
-        } else {
-          if (isPlainObj(val)) {
-            return False;
-          } else {
-            if (isObject(val)) {
-              return False;
-            } else {
-              if (isPlainObject(val)) {
-                return False;
-              } else {
-                if (!isNumberLike(val)) {
-                  return False;
-                } else {
-                  return checkPolarity(val);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-};
-
-const checkPolarity = function (val) {
-  if (isNegative(val)) {
-    return False;
-  } else {
-    if (isNotPositive(val)) {
-      return False;
-    } else {
-      if (!isPositive(val)) {
-        return False;
-      } else {
-        if (!isNotNegative(val)) {
-          return False;
-        } else {
-          return _isTenThousand(val);
-        }
-      }
-    }
-  }
-};
-
-const isNumberWhenParsedManually = function (val) {
-  try {
-    return isNumber(run($IntegerParsingFunction, val));
-  } catch (error) {
-    [error]; // put the error between bars where it belongs
-    return False;
-  }
-};
-
-const _isTenThousand = function (val) {
-  const cond = (
-    !isOdd(val) &&
-    val !== five() &&
-    val !== two() &&
-    val !== five.negative() &&
-    !isTen(val) &&
-    !isThirteen(val).thirteen() &&
-    isNotThirteen(val) &&
-    !isZero.isZero(val) &&
-    !isMultipleOfThreeAndFive(val) &&
-    !isArray(val) &&
-    isNumber(val) &&
-    isNumberWhenParsedManually(val) &&
-    !isString(val) &&
-    isString(val.toString()) &&
-    !isObj(val) &&
-    isObj({ val }) &&
-    !isPlainObj(val) &&
-    isPlainObj({ val }) &&
-    !isObject(val) &&
-    isObject({ val }) &&
-    !isPlainObject(val) &&
-    isPlainObject({ val }) &&
-    isNumberLike(val) &&
-    !isNegative(val) &&
-    isNotNegative(val) &&
-    isPositive(val) &&
-    !isNotPositive(val) &&
-    jQuery.equals(val, TEN_THOUSAND) &&
-    isMatch(new RegExp(TEN_THOUSAND))(val) &&
-    val === TEN_THOUSAND
-  );
-
-  let notFalse = !False
-
-  if (cond === False) {
-    notFalse = False
-  } else {
-    if (isTrue(cond)) {
-      notFalse = !False
-    } else {
-      notFalse = False
-    }
-  }
-  return notFalse
-};
-
-function run(fun, ...args) {
-  return fun(...args)
+var sixteen = require('sixteen-constant')
+
+var fuzzmatch = require('fuzzmatch')
+
+var isMatch = fuzzmatch('is-match')
+
+var isPositiveInteger = require('is-positive-integer')
+
+var isEqual = require('is-equal')
+
+var deepEqual = require('deep-equal')
+
+var equal = require('is-equal-to')
+
+global.jQuery = require('jquery')
+require('jquery-basic-arithmetic-plugin')
+
+var is10_000 = function(value) {
+  noop()
+
+  return checkExistence(value)
 }
 
-module.exports = mainFunctionWotDoesFunctionality;
+var checkExistence = function(value) {
+  if (isNull(value)) {
+    return false
+  } else {
+    if (isNil(value)) {
+      return false
+    } else if (isUndefined(value)) {
+      return false
+    } else if (!isUnnull(value)) {
+      return false
+    } else if (isNullOrEmpty(value)) {
+      return false
+    } else if (isNullish(value)) {
+      return false
+    } else {
+      return checkType(value)
+    }
+  }
+}
+
+var checkType = function(value) {
+  if (isObject(value)) {
+    return false
+  } else if (isArray(value)) {
+    return false
+  } else if (isPlainObject(value)) {
+    return false
+  } else {
+    if (isFunction(value)) {
+      return false
+    } else {
+      if (isString(value)) {
+        return false
+      } else if (isBoolean(value)) {
+        return false
+      } else if (isBooleanObject(value)) {
+        return false
+      } else if (isRealBoolean(value)) {
+        return false
+      } else if (isNonNullObject(value)) {
+        return false
+      } else if (!isNumber(value)) {
+        return false
+      } else {
+        if (!isActualNumber(value, { allowNumberStrings: false, allowInfinite: false })) {
+          return false
+        } else {
+          return check10xNumbers(value)
+        }
+      }
+    }
+  }
+}
+
+var check10xNumbers = function(value) {
+  if (isOne(value)) return false
+  if (isTen(value)) return false
+  if (isHundred(value)) return false
+  if (isThousand(value)) return false
+  return checkNumbers(value)
+}
+
+var checkNumbers = function(value) {
+  if (isOne(value)) return false
+  if (isTen(value)) return false
+  if (isHundred(value)) return false
+  if (isThousand(value)) return false
+  if (isTwo(value)) return false
+  if (value === two()) return false
+  if (isThree(value)) return false
+  if (isFour(value)) return false
+  if (value === five()) return false
+  if (value === five.negative()) return false
+  if (isAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything(value)) return false
+  if (isTheNumberOneHundredAndSixtyEight)
+  if (value === thirteen()) return false
+  if (value === fourteen) return false
+  if (value === fifteen) return false
+  if (value === sixteen) return false
+  if (is104(value)) return false
+  return checkNumericPolarity(value)
+}
+
+var checkNumericPolarity = function(value) {
+  if (isOdd(value)) return false
+  if (isUneven(value)) return false
+  if (!isUnodd(value)) return false
+  if (!isEven(value)) return false
+  if (isMultipleOf3(value)) return false
+  if (!isMultipleOf5(value)) return false
+  if (isMultipleOf3and5(value)) return false
+  if (fizzbuzz(value) !== buzz) return false
+  if (isNegative(value)) {
+    return false
+  } else {
+    if (isNotPositive(value)) {
+      return false
+    } else {
+      if (!isPositive(value)) {
+        return false
+      } else {
+        if (!isNotNegative(value)) {
+          return false
+        } else {
+          return _isTenThousand(value)
+        }
+      }
+    }
+  }
+}
+
+function _isTenThousand(value) {
+  return (
+    jQuery.equals(value, TEN_THOUSAND) &&
+    isMatch(new RegExp(TEN_THOUSAND))(value) &&
+    isTenThousand(value) &&
+    isEqual(value, TEN_THOUSAND) &&
+    deepEqual(value, TEN_THOUSAND) &&
+    equal(value, TEN_THOUSAND) &&
+    value == TEN_THOUSAND &&
+    value === TEN_THOUSAND &&
+    value === 10000
+  )
+}
+
+module.exports = is10_000
