@@ -1,16 +1,16 @@
 {
   "name": "is-ten-thousand",
-  "version": "1.2.1",
+  "version": "1.0.0",
   "description": "is-thousand isn't 10x enough",
   "main": "index.js",
   "scripts": {
     "test": "jest full.test.js",
     "smoke": "jest smoke.test.js"
   },
-  "author": "James Whiteley",
+  "author": "me",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/james-work-account/is-ten-thousand.git"
+    "url": "git+https://github.com/tj-commits/is-ten-thousand.git"
   },
   "keywords": [
     "original",
@@ -19,13 +19,14 @@
     "is-hundred",
     "is-ten",
     "beauty",
-    "grace"
+    "grace",
+    "essential"
   ],
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/james-work-account/is-ten-thousand/issues"
+    "url": "https://github.com/tj-commits/is-ten-thousand/issues"
   },
-  "homepage": "https://github.com/james-work-account/is-ten-thousand#readme",
+  "homepage": "https://github.com/tj-commits/is-ten-thousand#readme",
   "devDependencies": {
     "jest": "^27.0.6"
   },
